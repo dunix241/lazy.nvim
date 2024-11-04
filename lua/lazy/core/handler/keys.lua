@@ -110,6 +110,10 @@ end
 ---@param keys LazyKeys
 function M:_add(keys)
   local lhs = keys.lhs
+  if not lhs or lhs == "" then
+    return
+  end
+
   local opts = M.opts(keys)
 
   ---@param buf? number
@@ -191,7 +195,7 @@ end
 ---@param keys LazyKeys
 ---@param buf number?
 function M:_set(keys, buf)
-  if keys.rhs then
+  if keys.lhs and keys.lhs ~= "" and keys.rhs then
     local opts = M.opts(keys)
     ---@diagnostic disable-next-line: inject-field
     opts.buffer = buf
