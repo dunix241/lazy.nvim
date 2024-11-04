@@ -345,7 +345,7 @@ return
     version = "1.2.0-1"
   }, {
     name = "lazy.nvim",
-    url = "folke/lazy.nvim",
+    url = "dunix241/lazy.nvim",
     version = "11.14.1-1"
   }, {
     name = "lazydev.nvim",
